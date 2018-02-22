@@ -18,10 +18,10 @@ export class HomePage {
   constructor(public navCtrl: NavController, private _cdRef: ChangeDetectorRef) {
     // plugin won't preload data by default, unless preload property is defined within json object - defaults to 'none'
     this.myTracks = [{
-      src: 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t12-MP3-V0.mp3',
-      artist: 'John Mayer',
-      title: 'Why Georgia',
-      art: 'assets/img/johnmayer.jpg',
+      src: 'http://radios502.radiotouch.net:13201/;',
+      artist: 'Radio',
+      title: 'K Buena',
+      art: 'assets/img/kbuena.jpg',
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
     },
     {

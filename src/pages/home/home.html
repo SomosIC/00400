@@ -1,14 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Ionic Audio for Angular 4 / Ionic 3</h2>
-  <p>
-    This sample project shows you how simple it is to work with the ionic-audio module.
-  </p>
+  <h2>RADIO RANCHERA</h2>
 
   <ion-list>
     <ion-item *ngFor="let track of myTracks">
@@ -16,7 +13,7 @@
         <img src="{{track.art}}">
       </ion-thumbnail>
       <h2>{{track.title}}</h2>
-      <button ion-button (click)="currentTrack = track">Play</button><button ion-button (click)="add(track)">Add</button>
+      <button ion-button (click)="currentTrack = track">Play</button><button ion-button (click)="add(track)">favoritas</button>
     </ion-item>
   </ion-list>
 
@@ -35,8 +32,8 @@
 
   <ion-list *ngIf="playlist.length > 0">
     <ion-list-header no-lines inset>
-      PLAYLIST
-      <button ion-button clear item-right (click)="clear()">Clear</button>
+      Mis Radios
+      <button ion-button clear item-right (click)="clear()">Borrar Lista</button>
     </ion-list-header>
     <ion-item *ngFor="let track of playlist; let i = index">
       <h2>{{ track.title }}</h2>
