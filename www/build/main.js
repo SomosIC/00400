@@ -109,19 +109,62 @@ var HomePage = (function () {
                 preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
             },
             {
-                src: 'http://djneihtul.stream.laut.fm/djneihtul?t302=2018-02-19_18-41-43&uuid=13be18de-8e88-4e9d-b63e-74370c442b80',
-                artist: 'John Mayer',
-                title: 'esta xD',
-                art: 'assets/img/johnmayer.jpg',
+                src: 'http://issultra.endavomedia.com:8000/ultraranchito.mp3',
+                artist: 'Radio',
+                title: 'Ranchito',
+                art: 'assets/img/ranchito.jpg',
                 preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
             },
             {
-                src: 'http://radiosinlimite.net:8152/stream/1/',
-                artist: 'Stephane Wrembel',
-                title: 'Stephane Wrembel Live',
-                art: 'assets/img/Stephane.jpg',
+                src: 'http://live1.rcnmundo.com/lacarinosacucuta.mp3',
+                artist: 'Radio',
+                title: 'La Cariñosa',
+                art: 'assets/img/cariniosa.jpg',
                 preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
-            }];
+            },
+            {
+                src: 'http://17973.live.streamtheworld.com:3690/QTEJA_CR_SC;',
+                artist: 'Radio',
+                title: 'Qteja',
+                art: 'assets/img/qja.jpg',
+                preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
+            },
+            {
+                src: 'http://144.217.67.108:8059/;',
+                artist: 'Radio',
+                title: 'La Chimalteca',
+                art: 'assets/img/chimalteca.jpg',
+                preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+            },
+            {
+                src: 'http://198.15.86.218:9432/;',
+                artist: 'Radio',
+                title: 'Teziutlan',
+                art: 'assets/img/consentida.jpg',
+                preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+            },
+            {
+                src: 'http://192.99.150.42:8312/;',
+                artist: 'Radio',
+                title: 'TGD',
+                art: 'assets/img/tgd.jpg',
+                preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+            },
+            {
+                src: 'http://radio.spiritmedia.mx:8000/xerok;',
+                artist: 'Radio',
+                title: 'Calibre',
+                art: 'assets/img/calibre.jpg',
+                preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+            },
+            {
+                src: 'http://ample-zeno-05.radiojar.com/cqkqta30974tv?rj-ttl=5&rj-token=AAABYciiM46ANGDKwhUqFnQOieRPBqzfqO4gcCaH1QFfkzdTfL_QGA;',
+                artist: 'Radio',
+                title: 'La Ranchera Cuauhtemoc',
+                art: 'assets/img/cuauhtemoc.jpg',
+                preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+            }
+        ];
     }
     HomePage.prototype.add = function (track) {
         this.playlist.push(track);
@@ -155,9 +198,10 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"E:\Aplicaciones\00400\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Radios</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h2>RADIO RANCHERA</h2>\n\n\n\n  <ion-list>\n\n    <ion-item *ngFor="let track of myTracks">\n\n      <ion-thumbnail item-left>\n\n        <img src="{{track.art}}">\n\n      </ion-thumbnail>\n\n      <h2>{{track.title}}</h2>\n\n      <button ion-button (click)="currentTrack = track">Play</button><button ion-button (click)="add(track)">favoritas</button>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <audio-track #audioTrack [track]="currentTrack" [autoplay]="true" (onFinish)="onTrackFinished($event)">\n\n    <div style="display: flex">\n\n      <button ion-button icon-only (click)="audioTrack.canPlay ? audioTrack.play() : next()"><ion-icon name="play"></ion-icon></button>\n\n      <button ion-button icon-only (click)="audioTrack.pause()"><ion-icon name="pause"></ion-icon></button>\n\n      <button ion-button icon-only (click)="next()"><ion-icon name="skip-forward"></ion-icon></button>\n\n      <audio-track-progress-bar duration progress [audioTrack]="audioTrack" style="width: 100%; margin: 0 10px"></audio-track-progress-bar>\n\n    </div>\n\n    <div style="display: flex; justify-content: center; height: 50px">\n\n      <div *ngIf="audioTrack && audioTrack.hasLoaded"><em>{{ audioTrack?.title }}</em></div>\n\n      <ion-spinner *ngIf="audioTrack && audioTrack.isLoading"></ion-spinner>\n\n    </div>\n\n  </audio-track>\n\n\n\n  <ion-list *ngIf="playlist.length > 0">\n\n    <ion-list-header no-lines inset>\n\n      Mis Radios\n\n      <button ion-button clear item-right (click)="clear()">Borrar Lista</button>\n\n    </ion-list-header>\n\n    <ion-item *ngFor="let track of playlist; let i = index">\n\n      <h2>{{ track.title }}</h2>\n\n      <p>{{ track.artist }}</p>\n\n      <button ion-button icon-only item-end (click)="play(track, i)">\n\n          <ion-icon name="play"></ion-icon>\n\n        </button>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Aplicaciones\00400\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]) === "function" && _b || Object])
 ], HomePage);
 
+var _a, _b;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -256,7 +300,7 @@ var ContactPage = (function () {
 }());
 ContactPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-contact',template:/*ion-inline-start:"E:\Aplicaciones\00400\src\pages\contact\contact.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Acerca de\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n\n    <ion-item>\n\n      <ion-icon name="ionic" item-left></ion-icon>\n\n      @ionicframework\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <ion-list><!--IC-->\n\n  <ion-item>\n\n    <ion-thumbnail item-start>\n\n      <img src="assets/img/ic.jpg">\n\n    </ion-thumbnail>\n\n    <h2>Ideas Creativas</h2>\n\n    <p>somosic.com</p>\n\n    <a href="http://somosic.com" class="button button-dark">ir</a>\n\n  </ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--kreland-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/kre.jpg">\n\n  </ion-thumbnail>\n\n  <h2>Abner Castillo</h2>\n\n  <p>kreland</p>\n\n  <a href="http://somosic.com/staff/brian-willis/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--chofox-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/chofox.jpg">\n\n  </ion-thumbnail>\n\n  <h2>Rodolfo García</h2>\n\n  <p>chofox</p>\n\n  <a href="http://somosic.com/staff/rodolfo-garcia/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--jah-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/jah.jpg">\n\n  </ion-thumbnail>\n\n  <h2>José Tot</h2>\n\n  <p>jah</p>\n\n  <a href="http://somosic.com/staff/jose-tot/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--dewell-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/dewell.jpg">\n\n  </ion-thumbnail>\n\n  <h2>Dennis Wellmann</h2>\n\n  <p>dewell</p>\n\n  <a href="http://somosic.com/staff/dewell/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Aplicaciones\00400\src\pages\contact\contact.html"*/
+        selector: 'page-contact',template:/*ion-inline-start:"E:\Aplicaciones\00400\src\pages\contact\contact.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Acerca de\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-list-header>Conócenos</ion-list-header>\n\n    <ion-item>\n\n      <ion-icon name="ionic" item-left></ion-icon>\n\n      @ionicframework\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <ion-list><!--IC-->\n\n  <ion-item>\n\n    <ion-thumbnail item-start>\n\n      <img src="assets/img/ic.jpg">\n\n    </ion-thumbnail>\n\n    <h2>Ideas Creativas</h2>\n\n    <p>somosic.com</p>\n\n    <a href="http://somosic.com" class="button button-dark">ir</a>\n\n  </ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--kreland-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/kre.jpg">\n\n  </ion-thumbnail>\n\n  <h2>Abner Castillo</h2>\n\n  <p>kreland</p>\n\n  <a href="http://somosic.com/staff/brian-willis/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--chofox-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/chofox.jpg">\n\n  </ion-thumbnail>\n\n  <h2>Rodolfo García</h2>\n\n  <p>chofox</p>\n\n  <a href="http://somosic.com/staff/rodolfo-garcia/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--jah-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/jah.jpg">\n\n  </ion-thumbnail>\n\n  <h2>José Tot</h2>\n\n  <p>jah</p>\n\n  <a href="http://somosic.com/staff/jose-tot/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n<ion-list><!--dewell-->\n\n<ion-item>\n\n  <ion-thumbnail item-start>\n\n    <img src="assets/img/dewell.jpg">\n\n  </ion-thumbnail>\n\n  <h2>Dennis Wellmann</h2>\n\n  <p>dewell</p>\n\n  <a href="http://somosic.com/staff/dewell/" class="button button-dark">ir</a>\n\n</ion-item>\n\n</ion-list>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Aplicaciones\00400\src\pages\contact\contact.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], ContactPage);

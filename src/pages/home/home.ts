@@ -25,20 +25,74 @@ export class HomePage {
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
     },
     {
-      src: 'http://djneihtul.stream.laut.fm/djneihtul?t302=2018-02-19_18-41-43&uuid=13be18de-8e88-4e9d-b63e-74370c442b80',
-      artist: 'John Mayer',
-      title: 'esta xD',
-      art: 'assets/img/johnmayer.jpg',
+      src: 'http://issultra.endavomedia.com:8000/ultraranchito.mp3',
+      artist: 'Radio',
+      title: 'Ranchito',
+      art: 'assets/img/ranchito.jpg',
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
     },
 
     {
-      src: 'http://radiosinlimite.net:8152/stream/1/',
-      artist: 'Stephane Wrembel',
-      title: 'Stephane Wrembel Live',
-      art: 'assets/img/Stephane.jpg',
+      src: 'http://live1.rcnmundo.com/lacarinosacucuta.mp3',
+      artist: 'Radio',
+      title: 'La Cariñosa',
+      art: 'assets/img/cariniosa.jpg',
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
-    }];
+    },
+
+    {
+      src: 'http://17973.live.streamtheworld.com:3690/QTEJA_CR_SC;',
+      artist: 'Radio',
+      title: 'Qteja',
+      art: 'assets/img/qja.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
+    },
+
+
+
+
+    {
+      src: 'http://144.217.67.108:8059/;',
+      artist: 'Radio',
+      title: 'La Chimalteca',
+      art: 'assets/img/chimalteca.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+    },
+
+
+    {
+      src: 'http://198.15.86.218:9432/;',
+      artist: 'Radio',
+      title: 'Teziutlan',
+      art: 'assets/img/consentida.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+    },
+
+    {
+      src: 'http://192.99.150.42:8312/;',
+      artist: 'Radio',
+      title: 'TGD',
+      art: 'assets/img/tgd.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+    },
+
+    {
+      src: 'http://radio.spiritmedia.mx:8000/xerok;',
+      artist: 'Radio',
+      title: 'Calibre',
+      art: 'assets/img/calibre.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+    },
+
+    {
+      src: 'http://ample-zeno-05.radiojar.com/cqkqta30974tv?rj-ttl=5&rj-token=AAABYciiM46ANGDKwhUqFnQOieRPBqzfqO4gcCaH1QFfkzdTfL_QGA;',
+      artist: 'Radio',
+      title: 'La Ranchera Cuauhtemoc',
+      art: 'assets/img/cuauhtemoc.jpg',
+      preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+    }
+
+  ];
   }
 
   add(track: ITrackConstraint) {
