@@ -24,7 +24,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
+  primary:    #16a973,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -38,7 +38,7 @@ $colors: (
 //$ionic-audio-thumb-width:   25px;
 //$ionic-audio-thumb-color:   color($colors, light);
 //$ionic-audio-thumb-focus-color:   color($colors, primary);
-//$ionic-audio-thumb-shadow:  (2.2px 2.2px 8.9px #333333, 0px 0px 2.2px #404040); 
+//$ionic-audio-thumb-shadow:  (2.2px 2.2px 8.9px #333333, 0px 0px 2.2px #404040);
 //$ionic-audio-thumb-border:  0;
 //$ionic-audio-thumb-radius:  50px;
 
@@ -48,7 +48,7 @@ $colors: (
 //$ionic-audio-track-border:  0;
 //$ionic-audio-track-color:   color($colors, dark);
 //$ionic-audio-track-focus-color:   color($colors, secondary);
-//$ionic-audio-track-shadow:  none; 
+//$ionic-audio-track-shadow:  none;
 
 $ionic-audio-track-color:   color($colors, primary);  // Customize the timeline color
 
