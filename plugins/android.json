@@ -7,22 +7,22 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.ionicframework.testaudio700802"
-    },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.ionicframework.testaudio700802"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.ionicframework.testaudio700802"
-    },
     "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.ionicframework.testaudio700802"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.ionicframework.testaudio700802"
+    },
+    "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.ionicframework.testaudio700802"
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.ionicframework.testaudio700802"
     },
-    "cordova-plugin-device": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ionicframework.testaudio700802"
+    },
+    "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.ionicframework.testaudio700802"
     }
   },
